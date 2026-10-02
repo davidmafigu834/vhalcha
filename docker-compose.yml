@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: vhalcha
+      POSTGRES_PASSWORD: vhalcha
+      POSTGRES_DB: vhalcha
+      # First startup on Docker Desktop can take longer than the image default of 60 seconds.
+      PGCTLTIMEOUT: "300"
+    ports:
+      - "5432:5432"
+    volumes:
+      - vhalcha_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vhalcha -d vhalcha"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - vhalcha_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  vhalcha_postgres:
+  vhalcha_redis:

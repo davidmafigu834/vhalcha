@@ -1,0 +1,41 @@
+{
+  "name": "@vhalcha/gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "acceptance": "tsx src/run-acceptance.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/helmet": "^13.0.2",
+    "@vhalcha/audit": "workspace:*",
+    "@vhalcha/budgets": "workspace:*",
+    "@vhalcha/config": "workspace:*",
+    "@vhalcha/guard": "workspace:*",
+    "@vhalcha/database": "workspace:*",
+    "@vhalcha/knowledge": "workspace:*",
+    "@vhalcha/logger": "workspace:*",
+    "@vhalcha/policies": "workspace:*",
+    "@vhalcha/providers": "workspace:*",
+    "@vhalcha/redis": "workspace:*",
+    "@vhalcha/routing": "workspace:*",
+    "@vhalcha/security": "workspace:*",
+    "@vhalcha/types": "workspace:*",
+    "@vhalcha/usage": "workspace:*",
+    "fastify": "^5.6.1",
+    "pino": "^9.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

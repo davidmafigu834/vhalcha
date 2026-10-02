@@ -1,0 +1,43 @@
+{
+  "name": "vhalcha",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Vhalcha is the AI control plane for organisations. Developed by DIVSTAR Technologies Inc.",
+  "packageManager": "pnpm@10.15.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "dotenv -e .env -- turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "typecheck": "turbo typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:migrate": "dotenv -e .env -- pnpm --filter @vhalcha/database db:migrate",
+    "db:roles": "dotenv -e .env -- pnpm --filter @vhalcha/database db:roles",
+    "db:seed": "dotenv -e .env -- pnpm --filter @vhalcha/database db:seed",
+    "db:sync-prices": "dotenv -e .env -- pnpm --filter @vhalcha/database db:sync-prices",
+    "acceptance": "dotenv -e .env -- pnpm --filter @vhalcha/gateway acceptance",
+    "smoke:openai": "dotenv -e .env -- pnpm --filter @vhalcha/providers smoke:openai",
+    "smoke:anthropic": "dotenv -e .env -- pnpm --filter @vhalcha/providers smoke:anthropic",
+    "smoke:google": "dotenv -e .env -- pnpm --filter @vhalcha/providers smoke:google"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/node": "^22.20.4",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.35.0",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.6",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.43.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

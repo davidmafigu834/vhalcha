@@ -1,0 +1,37 @@
+{
+  "name": "@vhalcha/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@vhalcha/audit": "workspace:*",
+    "@vhalcha/auth": "workspace:*",
+    "@vhalcha/config": "workspace:*",
+    "@vhalcha/database": "workspace:*",
+    "@vhalcha/guard": "workspace:*",
+    "@vhalcha/knowledge": "workspace:*",
+    "@vhalcha/logger": "workspace:*",
+    "@vhalcha/policies": "workspace:*",
+    "@vhalcha/providers": "workspace:*",
+    "@vhalcha/redis": "workspace:*",
+    "@vhalcha/security": "workspace:*",
+    "@vhalcha/types": "workspace:*",
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@vhalcha/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@vhalcha/budgets": "workspace:*",
+    "@vhalcha/config": "workspace:*",
+    "@vhalcha/database": "workspace:*",
+    "@vhalcha/knowledge": "workspace:*",
+    "@vhalcha/logger": "workspace:*",
+    "@vhalcha/redis": "workspace:*",
+    "drizzle-orm": "^0.44.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

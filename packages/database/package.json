@@ -1,0 +1,39 @@
+{
+  "name": "@vhalcha/database",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing/harness.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "db:migrate": "tsx src/migrate.ts",
+    "db:roles": "tsx src/ensure-dev-roles.ts",
+    "db:seed": "tsx src/seed.ts",
+    "db:sync-prices": "tsx src/sync-prices.ts"
+  },
+  "dependencies": {
+    "@vhalcha/audit": "workspace:*",
+    "@vhalcha/guard": "workspace:*",
+    "@vhalcha/knowledge": "workspace:*",
+    "@vhalcha/routing": "workspace:*",
+    "@vhalcha/security": "workspace:*",
+    "@vhalcha/types": "workspace:*",
+    "drizzle-orm": "^0.44.5",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@vhalcha/budgets": "workspace:*",
+    "@electric-sql/pglite": "^0.3.11",
+    "@types/node": "^22.20.4",
+    "@types/pg": "^8.15.5",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
